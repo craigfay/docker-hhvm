@@ -1,8 +1,8 @@
 version: '3'
 services:
-  hack:
-    image: hhvm/hhvm-proxygen:latest
-    volumes:
-      - ./public:/var/www/public
-    ports:
-      - "80:80"
+    hhvm:
+        image: hhvm/hhvm-proxygen:latest
+        ports:
+            - 80:80
+        volumes:
+            - ./public:/var/www/public 
