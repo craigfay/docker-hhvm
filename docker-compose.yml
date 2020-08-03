@@ -1,8 +1,13 @@
 version: '3'
 services:
     hhvm:
-        image: hhvm/hhvm-proxygen:latest
+        build:
+            context: .
         ports:
             - 80:80
         volumes:
-            - ./public:/var/www/public 
+            - ./:/app
+            - composer_packages:/app/vendor
+
+volumes:
+    composer_packages:
